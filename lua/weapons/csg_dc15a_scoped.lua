@@ -1,7 +1,8 @@
-SWEP.Gun							= ("gun_base")
-if (GetConVar(SWEP.Gun.."_allowed")) != nil then
-	if not (GetConVar(SWEP.Gun.."_allowed"):GetBool()) then SWEP.Base = "tfa_blacklisted" SWEP.PrintName = SWEP.Gun return end
-end
+SWEP.Gun							= "gun_base"
+if (GetConVar(SWEP.Gun .. "_allowed")) != nil and not (GetConVar(SWEP.Gun .. "_allowed"):GetBool()) then
+	SWEP.Base = "tfa_blacklisted"
+	SWEP.PrintName = SWEP.Gun
+return end
 
 SWEP.Base							= "tfa_gun_base"
 SWEP.Category						= "CS-G SWEPs"
@@ -36,7 +37,7 @@ SWEP.FireModeName 					= nil
 SWEP.DisableChambering 				= true
 
 SWEP.Primary.ClipSize				= 65
-SWEP.Primary.DefaultClip			= 65*5
+SWEP.Primary.DefaultClip			= 65 * 5
 SWEP.Primary.RPM					= 450
 SWEP.Primary.RPM_Burst				= 720
 SWEP.Primary.Ammo					= "ar2"
@@ -184,19 +185,19 @@ SWEP.VElements = {
 	["magxl"] = { type = "Model", model = "models/sw_battlefront/weapons/a280_cell_mod.mdl", bone = "", rel = "dc15", pos = Vector(-6.5, 1.6, 2), angle = Angle(0, 0, -90), size = Vector(1.5, 1.5, 3.5), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {}, active = false  },
 	["muzzle1"] = { type = "Model", model = "models/sw_battlefront/weapons/2019/dc15_mod_muzzle.mdl", bone = "", rel = "dc15", pos = Vector(-0.6, 0, -0.5), angle = Angle(-90, 0, 0), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {}, active = false  },
 	["muzzle2"] = { type = "Model", model = "models/sw_battlefront/weapons/2019/dlt19_heavyrifle_muzzle1.mdl", bone = "", rel = "dc15", pos = Vector(-2, 0, -0.6), angle = Angle(0, 0, 0), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {}, active = false  },
-	
+
 	["scope_base"] = { type = "Model", model = "models/sw_battlefront/weapons/2019/e11_carbine_top1.mdl", bone = "", rel = "dc15", pos = Vector(3.5, 0, -1.85), angle = Angle(0, 0, 0), size = Vector(1, 1, 1.5), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {}, active = false  },
 	["scope2"] = { type = "Model", model = "models/sw_battlefront/weapons/scope.mdl", bone = "", rel = "scope_base", pos = Vector(-1.05, 0, 2), angle = Angle(0, 0, 0), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {}, active = false  },
 	["scope2_ret"] = { type = "Model", model = "models/rtcircle.mdl", bone = "", rel = "scope2", pos = Vector(-1.4, 0, 4.48), angle = Angle(180, 0, 180), size = Vector(0.28, 0.28, 0.28), color = Color(255, 255, 255, 255), surpresslightning = false, material = "!tfa_rtmaterial", skin = 0, bodygroup = {}, active = false  },
 	["scope4"] = { type = "Model", model = "models/sw_battlefront/weapons/e11_scope.mdl", bone = "", rel = "scope_base", pos = Vector(3.85, 0, -2.45), angle = Angle(0, 0, 0), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {}, active = false  },
 	["scope4_ret"] = { type = "Model", model = "models/rtcircle.mdl", bone = "", rel = "scope4", pos = Vector(-6.85, -0.036, 8.51), angle = Angle(180, 0, 180), size = Vector(0.26, 0.26, 0.26), color = Color(255, 255, 255, 255), surpresslightning = false, material = "!tfa_rtmaterial", skin = 0, bodygroup = {}, active = false  },
-	
+
 	["destab1"] = { type = "Model", model = "models/sw_battlefront/weapons/2019/a280cfe_trigger.mdl", bone = "", rel = "dc15", pos = Vector(5.65, -0.05, -1), angle = Angle(0, 0, 0), size = Vector(1.3, 1.3, 1.3), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {}, active = false },
 	["destab2"] = { type = "Model", model = "models/sw_battlefront/weapons/2019/blurrg_trigger_mod.mdl", bone = "", rel = "dc15", pos = Vector(9.8, 1.5, 0.155), angle = Angle(0, 90, 0), size = Vector(0.6, 0.6, 0.6), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {}, active = false },
 	["destab3"] = { type = "Model", model = "models/sw_battlefront/weapons/2019/blurrg_trigger_mod.mdl", bone = "", rel = "dc15", pos = Vector(9.8, -1.5, 0.155), angle = Angle(0, -90, 0), size = Vector(0.6, 0.6, 0.6), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {}, active = false },
 
 	["gl"] = { type = "Model", model = "models/sw_battlefront/weapons/2019/a280cfe_default_scope2.mdl", bone = "", rel = "dc15", pos = Vector(39.6, 0, 7.25), angle = Angle(180, 0, 0), size = Vector(1.55, 1.65, 1.65), color = Color(200, 200, 200, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {}, active = false  },
-	
+
 	["ammoind"] = { type = "Model", model = "models/hunter/plates/plate.mdl", bone = "", rel = "scope_base", pos = Vector(8.11, -0, 5.2675), angle = Angle(0, 90, 0), size = Vector(.278, .010, 0.13), color = Color(0,0,0,255), surpresslightning = true, material = "models/debug/debugwhite", skin = 0, bodygroup = {}, active = true },
 }
 
@@ -225,11 +226,11 @@ SWEP.WElements = {
 
 	["scope2"] = { type = "Model", model = "models/sw_battlefront/weapons/scope.mdl", bone = "", rel = "scope_base", pos = Vector(-1.05, 0, 2), angle = Angle(0, 0, 0), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {}, active = false  },
 	["scope4"] = { type = "Model", model = "models/sw_battlefront/weapons/e11_scope.mdl", bone = "", rel = "scope_base", pos = Vector(3.85, 0, -2.45), angle = Angle(0, 0, 0), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {}, active = false  },
-	
+
 	["destab1"] = { type = "Model", model = "models/sw_battlefront/weapons/2019/a280cfe_trigger.mdl", bone = "", rel = "dc15", pos = Vector(5.65, -0.05, -1), angle = Angle(0, 0, 0), size = Vector(1.3, 1.3, 1.3), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {}, active = false },
 	["destab2"] = { type = "Model", model = "models/sw_battlefront/weapons/2019/blurrg_trigger_mod.mdl", bone = "", rel = "dc15", pos = Vector(9.8, 1.5, 0.155), angle = Angle(0, 90, 0), size = Vector(0.6, 0.6, 0.6), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {}, active = false },
 	["destab3"] = { type = "Model", model = "models/sw_battlefront/weapons/2019/blurrg_trigger_mod.mdl", bone = "", rel = "dc15", pos = Vector(9.8, -1.5, 0.155), angle = Angle(0, -90, 0), size = Vector(0.6, 0.6, 0.6), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {}, active = false },
-	
+
 	["gl"] = { type = "Model", model = "models/sw_battlefront/weapons/2019/a280cfe_default_scope2.mdl", bone = "", rel = "dc15", pos = Vector(39.6, 0, 7.25), angle = Angle(180, 0, 0), size = Vector(1.55, 1.65, 1.65), color = Color(200, 200, 200, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {}, active = false  },
 }
 
@@ -239,7 +240,7 @@ SWEP.Primary.DamageType 			= DMG_BULLET
 SWEP.DamageType 					= DMG_BULLET
 SWEP.RTScopeAttachment				= -1
 SWEP.Scoped_3D 						= false
-SWEP.ScopeReticule 					= "#sw/visor/sw_ret_redux_blue" 
+SWEP.ScopeReticule 					= "#sw/visor/sw_ret_redux_blue"
 SWEP.Secondary.ScopeZoom 			= 9
 SWEP.ScopeReticule_Scale 			= {1.1,1.1}
 if surface then
@@ -253,7 +254,7 @@ if surface then
 end
 
 SWEP.StatusLengthOverride = {
-    [ACT_VM_RELOAD] = 5
+	[ACT_VM_RELOAD] = 5
 }
 
 SWEP.ProceduralReloadTime = 3.5
@@ -265,27 +266,27 @@ DEFINE_BASECLASS( SWEP.Base )
 SWEP.IsReloading = false
 
 hook.Add( "TFA_Reload", "OnReload", function( wep )
-	wep.PreReloadAmmo = wep.Weapon:Clip1()
+	wep.PreReloadAmmo = wep:Clip1()
 	wep.IsReloading = true
 end)
 
 function SWEP:Think()
 	BaseClass.Think(self)
-	if self.IsReloading and self.Weapon:Clip1() ~= self.PreReloadAmmo then
+	if self.IsReloading and self:Clip1() != self.PreReloadAmmo then
 		self.IsReloading = false
 		self.PreReloadAmmo = nil
 		if surface and ( CLIENT or game.SinglePlayer() ) then
 			surface.PlaySound( "buttons/blip1.wav" )
 		end
 	end
-	
+
 	hook.Add( "PlayerSwitchWeapon", "OnSwap", function( ply, old, new )
 		if self:IsValid() and self:GetOwner() == ply then
 			self.IsReloading = false
 		end
 	end)
-	
-	if self.Weapon:Clip1() ~= 0 and !self.IsReloading then
+
+	if self:Clip1() != 0 and not self.IsReloading then
 		self.VElements["ammoind"].color = Color( 255, 255, 255, 255 )
 	else
 		self.VElements["ammoind"].color = Color( 0, 0, 0, 255 )

@@ -6,7 +6,7 @@ end
 
 ATTACHMENT.Name = "Overloaded Cells"
 ATTACHMENT.ShortName = "OVC" --Abbreviation, 5 chars or less please
-ATTACHMENT.Description = { 
+ATTACHMENT.Description = {
 TFA.AttachmentColors["="], "Overloaded Cells best used for CQB",
 TFA.AttachmentColors["+"], "Increases cell capacity from 35 to 40.",
 TFA.AttachmentColors["+"], "Increases RPM",

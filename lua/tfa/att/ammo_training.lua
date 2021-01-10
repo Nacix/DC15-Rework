@@ -5,10 +5,10 @@ end
 ATTACHMENT.Name = "Training Mode"
 ATTACHMENT.ShortName = "TRN"
 ATTACHMENT.Icon = "entities/training.png"
-ATTACHMENT.Description = { 
+ATTACHMENT.Description = {
 	TFA.AttachmentColors["="],"Fires (relatively) harmless lasers while retaining base functionality",
-    TFA.AttachmentColors["+"], "Minimal Damage", 
-    TFA.AttachmentColors["-"], "Minimal Damage", 
+	TFA.AttachmentColors["+"], "Minimal Damage",
+	TFA.AttachmentColors["-"], "Minimal Damage",
 }
 
 ATTACHMENT.WeaponTable = {

@@ -5,17 +5,17 @@ end
 ATTACHMENT.Name = "Heavy Muzzle"
 ATTACHMENT.ShortName = "HMZ"
 ATTACHMENT.Icon = "entities/att/m1.png"
-ATTACHMENT.Description = { 
-    --TFA.AttachmentColors["="], "", 
-    TFA.AttachmentColors["+"], "Reduces recoil by 50%", 
-	TFA.AttachmentColors["-"], "Reduces movement speed by 10 points", 
+ATTACHMENT.Description = {
+	--TFA.AttachmentColors["="], "", 
+	TFA.AttachmentColors["+"], "Reduces recoil by 50%",
+	TFA.AttachmentColors["-"], "Reduces movement speed by 10 points",
 }
 
 ATTACHMENT.WeaponTable = {
 	["VElements"] = {
 		["muzzle1"] = {
 			["active"] = true
-		},	
+		},
 	},
 	["WElements"] = {
 		["muzzle1"] = {

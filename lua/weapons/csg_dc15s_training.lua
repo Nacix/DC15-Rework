@@ -1,4 +1,10 @@
-SWEP.PrintName 						= "DC-15s Training"			
+SWEP.Gun							= "gun_base"
+if (GetConVar(SWEP.Gun .. "_allowed")) != nil and not (GetConVar(SWEP.Gun .. "_allowed"):GetBool()) then
+	SWEP.Base = "tfa_blacklisted"
+	SWEP.PrintName = SWEP.Gun
+return end
+
+SWEP.PrintName 						= "DC-15s Training"
 SWEP.Author							= "Tasty"
 SWEP.Manufacturer 					= "ChanceSphere574 & Servius"
 SWEP.Slot							= 2
@@ -50,7 +56,7 @@ SWEP.SafetyPos 						= Vector(0, 0, 0)
 SWEP.SafetyAng 						= Vector(-10, 10, 0)
 
 SWEP.Primary.SpreadMultiplierMax 	= nil							-- How far the spread can expand when you shoot. Example val: 2.5
-SWEP.Primary.SpreadIncrement 		= 1/2.9							-- What percentage of the modifier is added on, per shot.  Example val: 1/3.5
+SWEP.Primary.SpreadIncrement 		= 1 / 2.9							-- What percentage of the modifier is added on, per shot.  Example val: 1/3.5
 
 SWEP.Tracer							= 0
 SWEP.TracerName 					= "effect_sw_laser_orange"
@@ -89,7 +95,7 @@ SWEP.EmptyColor 					= Color(0, 0, 0, 255)
 SWEP.VElements = {
 	["scope_base"] = { type = "Model", model = "models/sw_battlefront/weapons/2019/e11_carbine_top1.mdl", bone = "DC15", rel = "", pos = Vector(0.029, 3.6, -1.2), angle = Angle(90, 0, 270), size = Vector(1, 1, 1.5), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {}, active = true  },
 	["iron"] = { type = "Model", model = "models/sw_battlefront/weapons/2019/e11_carbine_rearsight.mdl", bone = "", rel = "scope_base", pos = Vector(-8, 0.01, 2.99), angle = Angle(0, 0, 0), size = Vector(1, 1, 0.8), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {}, active = false },
-	
+
 	["ind1"] = { type = "Model", model = "models/hunter/plates/plate.mdl", bone = "", rel = "scope_base", pos = Vector(-0.3, -1.12, 4.0675), angle = Angle(0, 90, 0), size = Vector(0.1, .080, 0.2), color = SWEP.ChargeColor, surpresslightning = true, material = "models/debug/debugwhite", skin = 0, bodygroup = {}, active = true },
 	["ind2"] = { type = "Model", model = "models/hunter/plates/plate.mdl", bone = "", rel = "scope_base", pos = Vector(0.0495, -1.12, 4.0675), angle = Angle(0, 90, 0), size = Vector(0.1, .080, 0.2), color = SWEP.ChargeColor, surpresslightning = true, material = "models/debug/debugwhite", skin = 0, bodygroup = {}, active = true },
 	["ind3"] = { type = "Model", model = "models/hunter/plates/plate.mdl", bone = "", rel = "scope_base", pos = Vector(0.39, -1.12, 4.0675), angle = Angle(0, 90, 0), size = Vector(0.1, .080, 0.2), color = SWEP.ChargeColor, surpresslightning = true, material = "models/debug/debugwhite", skin = 0, bodygroup = {}, active = true },
@@ -110,7 +116,8 @@ DEFINE_BASECLASS( SWEP.Base )
 
 function SWEP:Think()
 	BaseClass.Think(self)
-	if( self.Weapon:Clip1() <= self.Primary.ClipSize && self.Weapon:Clip1() >= (self.Primary.ClipSize/6)*5) then 
+	if self.ChargeColor != self.TrainingColor and self.Training then self.ChargeColor = self.TrainingColor end
+	if ( self:Clip1() <= self.Primary.ClipSize and self:Clip1() >= (self.Primary.ClipSize / 6) * 5) then
 		self.VElements["ind1"].color = self.ChargeColor
 		self.VElements["ind1"].surpresslightning = true
 		self.VElements["ind2"].color = self.ChargeColor
@@ -127,8 +134,8 @@ function SWEP:Think()
 		self.VElements["ind7"].surpresslightning = true
 		self.VElements["ind8"].color = self.ChargeColor
 		self.VElements["ind8"].surpresslightning = true
-	end	
-	if( self.Weapon:Clip1() <= (self.Primary.ClipSize/8)*7 && self.Weapon:Clip1() >= (self.Primary.ClipSize/6)*4) then 
+	end
+	if ( self:Clip1() <= (self.Primary.ClipSize / 8) * 7 and self:Clip1() >= (self.Primary.ClipSize / 6) * 4) then
 		self.VElements["ind1"].color = self.ChargeColor
 		self.VElements["ind1"].surpresslightning = true
 		self.VElements["ind2"].color = self.ChargeColor
@@ -145,8 +152,8 @@ function SWEP:Think()
 		self.VElements["ind7"].surpresslightning = true
 		self.VElements["ind8"].color = self.EmptyColor
 		self.VElements["ind8"].surpresslightning = false
-	end	
-	if( self.Weapon:Clip1() <= (self.Primary.ClipSize/8)*6 && self.Weapon:Clip1() >= (self.Primary.ClipSize/6)*3) then 
+	end
+	if ( self:Clip1() <= (self.Primary.ClipSize / 8) * 6 and self:Clip1() >= (self.Primary.ClipSize / 6) * 3) then
 		self.VElements["ind1"].color = self.ChargeColor
 		self.VElements["ind1"].surpresslightning = true
 		self.VElements["ind2"].color = self.ChargeColor
@@ -163,8 +170,8 @@ function SWEP:Think()
 		self.VElements["ind7"].surpresslightning = false
 		self.VElements["ind8"].color = self.EmptyColor
 		self.VElements["ind8"].surpresslightning = false
-	end	
-	if( self.Weapon:Clip1() <= (self.Primary.ClipSize/8)*5 && self.Weapon:Clip1() >= (self.Primary.ClipSize/6)*2) then 
+	end
+	if ( self:Clip1() <= (self.Primary.ClipSize / 8) * 5 and self:Clip1() >= (self.Primary.ClipSize / 6) * 2) then
 		self.VElements["ind1"].color = self.ChargeColor
 		self.VElements["ind1"].surpresslightning = true
 		self.VElements["ind2"].color = self.ChargeColor
@@ -181,8 +188,8 @@ function SWEP:Think()
 		self.VElements["ind7"].surpresslightning = false
 		self.VElements["ind8"].color = self.EmptyColor
 		self.VElements["ind8"].surpresslightning = false
-	end	
-	if( self.Weapon:Clip1() <= (self.Primary.ClipSize/8)*4 && self.Weapon:Clip1() >= self.Primary.ClipSize/6) then 
+	end
+	if ( self:Clip1() <= (self.Primary.ClipSize / 8) * 4 and self:Clip1() >= self.Primary.ClipSize / 6) then
 		self.VElements["ind1"].color = self.ChargeColor
 		self.VElements["ind1"].surpresslightning = true
 		self.VElements["ind2"].color = self.ChargeColor
@@ -200,7 +207,7 @@ function SWEP:Think()
 		self.VElements["ind8"].color = self.EmptyColor
 		self.VElements["ind8"].surpresslightning = false
 	end
-	if( self.Weapon:Clip1() <= (self.Primary.ClipSize/8)*3 && self.Weapon:Clip1() >= self.Primary.ClipSize/6) then 
+	if ( self:Clip1() <= (self.Primary.ClipSize / 8) * 3 and self:Clip1() >= self.Primary.ClipSize / 6) then
 		self.VElements["ind1"].color = self.ChargeColor
 		self.VElements["ind1"].surpresslightning = true
 		self.VElements["ind2"].color = self.ChargeColor
@@ -217,8 +224,8 @@ function SWEP:Think()
 		self.VElements["ind7"].surpresslightning = false
 		self.VElements["ind8"].color = self.EmptyColor
 		self.VElements["ind8"].surpresslightning = false
-	end	
-	if( self.Weapon:Clip1() <= (self.Primary.ClipSize/8)*2 && self.Weapon:Clip1() >= self.Primary.ClipSize/6) then 
+	end
+	if ( self:Clip1() <= (self.Primary.ClipSize / 8) * 2 and self:Clip1() >= self.Primary.ClipSize / 6) then
 		self.VElements["ind1"].color = self.ChargeColor
 		self.VElements["ind1"].surpresslightning = true
 		self.VElements["ind2"].color = self.ChargeColor
@@ -235,8 +242,8 @@ function SWEP:Think()
 		self.VElements["ind7"].surpresslightning = false
 		self.VElements["ind8"].color = self.EmptyColor
 		self.VElements["ind8"].surpresslightning = false
-	end	
-	if( self.Weapon:Clip1() <= self.Primary.ClipSize/8 && self.Weapon:Clip1() > 0) then 
+	end
+	if ( self:Clip1() <= self.Primary.ClipSize / 8 and self:Clip1() > 0) then
 		self.VElements["ind1"].color = self.ChargeColor
 		self.VElements["ind1"].surpresslightning = true
 		self.VElements["ind2"].color = self.EmptyColor
@@ -254,7 +261,7 @@ function SWEP:Think()
 		self.VElements["ind8"].color = self.EmptyColor
 		self.VElements["ind8"].surpresslightning = false
 	end
-	if( self.Weapon:Clip1() == 0) then 
+	if ( self:Clip1() == 0) then
 		self.VElements["ind1"].color = self.EmptyColor
 		self.VElements["ind1"].surpresslightning = false
 		self.VElements["ind2"].color = self.EmptyColor

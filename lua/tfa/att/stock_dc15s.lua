@@ -5,11 +5,11 @@ end
 ATTACHMENT.Name = "Stock"
 ATTACHMENT.ShortName = "STK"
 ATTACHMENT.Icon = "entities/att/stock4.png"
-ATTACHMENT.Description = { 
-    --TFA.AttachmentColors["="], "", 
-    TFA.AttachmentColors["="], "Attaches a stock", 
-	TFA.AttachmentColors["+"], "Better control", 
-	TFA.AttachmentColors["-"], "Slightly reduced mobility", 
+ATTACHMENT.Description = {
+	--TFA.AttachmentColors["="], "", 
+	TFA.AttachmentColors["="], "Attaches a stock",
+	TFA.AttachmentColors["+"], "Better control",
+	TFA.AttachmentColors["-"], "Slightly reduced mobility",
 }
 
 ATTACHMENT.WeaponTable = {
@@ -24,10 +24,10 @@ ATTACHMENT.WeaponTable = {
 		},
 	},
 	["Primary"] = {
-		["KickUp"] = function(wep,stat) return stat/1.05 end,
-		["KickDown"] = function(wep,stat) return stat/1.05 end,
-		["KickHorizontal"] = function(wep,stat) return stat/1.05 end,
-		["SpreadMultiplierMax"] = function(wep,stat) return stat/1.05 end,
+		["KickUp"] = function(wep,stat) return stat / 1.05 end,
+		["KickDown"] = function(wep,stat) return stat / 1.05 end,
+		["KickHorizontal"] = function(wep,stat) return stat / 1.05 end,
+		["SpreadMultiplierMax"] = function(wep,stat) return stat / 1.05 end,
 	},
 	["MoveSpeed"] = function( wep, stat ) return stat - .1 end,
 }

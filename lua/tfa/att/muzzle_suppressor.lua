@@ -5,10 +5,10 @@ end
 ATTACHMENT.Name = "Noise Suppression System"
 ATTACHMENT.ShortName = "NSS"
 ATTACHMENT.Icon = "entities/att/stealth.png"
-ATTACHMENT.Description = { 
-    --TFA.AttachmentColors["="], "", 
-    TFA.AttachmentColors["+"], "Better Control", 
-    TFA.AttachmentColors["+"], "Silenced Sound", 
+ATTACHMENT.Description = {
+	--TFA.AttachmentColors["="], "", 
+	TFA.AttachmentColors["+"], "Better Control",
+	TFA.AttachmentColors["+"], "Silenced Sound",
 	TFA.AttachmentColors["-"], "Less mobility",
 	TFA.AttachmentColors["-"], "Less damage",
 }
@@ -18,7 +18,7 @@ ATTACHMENT.WeaponTable = {
 	["VElements"] = {
 		["suppressor"] = {
 			["active"] = true
-		},	
+		},
 	},
 	["WElements"] = {
 		["suppressor"] = {

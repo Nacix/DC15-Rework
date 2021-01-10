@@ -6,7 +6,7 @@ end
 
 ATTACHMENT.Name = "Overcharged Plasma"
 ATTACHMENT.ShortName = "OVP" --Abbreviation, 5 chars or less please
-ATTACHMENT.Description = { 
+ATTACHMENT.Description = {
 TFA.AttachmentColors["="], "Overcharged plasma allows for more damage at the cost of DPS",
 TFA.AttachmentColors["+"], "Increases damage from 35 to 60",
 TFA.AttachmentColors["-"], "Decreases RPM",

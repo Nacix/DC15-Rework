@@ -5,10 +5,10 @@ end
 ATTACHMENT.Name = "2x Scope"
 ATTACHMENT.ShortName = "2X"
 ATTACHMENT.Icon = "entities/att/s3.png"
-ATTACHMENT.Description = { 
-    TFA.AttachmentColors["="], "Attaches a low power zoom scope",
-    TFA.AttachmentColors["+"], "2x Zoom",
-    TFA.AttachmentColors["-"], "Reduces speed while aiming",
+ATTACHMENT.Description = {
+	TFA.AttachmentColors["="], "Attaches a low power zoom scope",
+	TFA.AttachmentColors["+"], "2x Zoom",
+	TFA.AttachmentColors["-"], "Reduces speed while aiming",
 }
 
 ATTACHMENT.WeaponTable = {
@@ -41,7 +41,7 @@ ATTACHMENT.WeaponTable = {
 	},
 
 	["Primary"] = {
-		["IronAccuracy "] = .0001, 
+		["IronAccuracy "] = .0001,
 		--["KickUp"] = 0,
 		--["KickDown"] = 0,
 		--["KickHorizontal"] = 0,

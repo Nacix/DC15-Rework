@@ -5,8 +5,8 @@ end
 ATTACHMENT.Name = "Ironsights"
 ATTACHMENT.ShortName = "IRN"
 ATTACHMENT.Icon = "entities/ironsight2.png"
-ATTACHMENT.Description = { 
-    --TFA.AttachmentColors["="], "", 
+ATTACHMENT.Description = {
+	--TFA.AttachmentColors["="], "", 
 }
 
 ATTACHMENT.WeaponTable = {
@@ -14,7 +14,7 @@ ATTACHMENT.WeaponTable = {
 	["VElements"] = {
 		["iron"] = {
 			["active"] = true
-		},	
+		},
 	},
 	["WElements"] = {
 		["iron"] = {
@@ -24,11 +24,11 @@ ATTACHMENT.WeaponTable = {
 }
 
 function ATTACHMENT:Attach(wep)
-	
+
 end
 
 function ATTACHMENT:Detach(wep)
-	
+
 end
 
 if not TFA_ATTACHMENT_ISUPDATING then

@@ -6,7 +6,7 @@ end
 ATTACHMENT.Name = "Mk.3 Stun"
 ATTACHMENT.ShortName = "15s" --Abbreviation, 5 chars or less please
 --ATTACHMENT.ID = "base" -- normally this is just your filename
-ATTACHMENT.Description = { 
+ATTACHMENT.Description = {
 	TFA.AttachmentColors["+"],"Stunned for 15 Seconds",
 }
 ATTACHMENT.Icon = "entities/icon/mod_stun15.png" --Revers to label, please give it an icon though!  This should be the path to a png, like "entities/tfa_ammo_match.png"

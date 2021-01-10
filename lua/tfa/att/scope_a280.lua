@@ -5,10 +5,10 @@ end
 ATTACHMENT.Name = "6x Scope"
 ATTACHMENT.ShortName = "6x"
 ATTACHMENT.Icon = "entities/att/s2.png"
-ATTACHMENT.Description = { 
-    TFA.AttachmentColors["="], "Attaches a high power zoom scope", 
-    TFA.AttachmentColors["+"], "6x Zoom", 
-    TFA.AttachmentColors["-"], "Reduces speed while aiming", 
+ATTACHMENT.Description = {
+	TFA.AttachmentColors["="], "Attaches a high power zoom scope",
+	TFA.AttachmentColors["+"], "6x Zoom",
+	TFA.AttachmentColors["-"], "Reduces speed while aiming",
 }
 
 ATTACHMENT.WeaponTable = {

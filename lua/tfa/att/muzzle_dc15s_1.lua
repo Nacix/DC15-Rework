@@ -5,17 +5,17 @@ end
 ATTACHMENT.Name = "Standard Muzzle"
 ATTACHMENT.ShortName = "LMZ"
 ATTACHMENT.Icon = "entities/att/m2.png"
-ATTACHMENT.Description = { 
-    --TFA.AttachmentColors["="], "", 
-    TFA.AttachmentColors["+"], "Reduces recoil by 25%", 
-	TFA.AttachmentColors["-"], "Reduces movement speed by 5 points", 
+ATTACHMENT.Description = {
+	--TFA.AttachmentColors["="], "", 
+	TFA.AttachmentColors["+"], "Reduces recoil by 25%",
+	TFA.AttachmentColors["-"], "Reduces movement speed by 5 points",
 }
 
 ATTACHMENT.WeaponTable = {
 	["VElements"] = {
 		["muzzle2"] = {
 			["active"] = true
-		},	
+		},
 	},
 	["WElements"] = {
 		["muzzle2"] = {
