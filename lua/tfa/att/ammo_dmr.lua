@@ -23,18 +23,18 @@ ATTACHMENT.WeaponTable = {
 		["BurstDelay"] = 0.3,
 		["RPM_Burst"] = 250,
 	},
-	--["MoveSpeed"] = .95,
+	["MoveSpeed"] = .95,
 }
 
 function ATTACHMENT:Attach(wep)
-	--wep.CachedColor = Color(255, 50, 50, 255)
-	--wep.ChargeColor = Color( 255, 50, 50, 255 )
+	wep.CachedColor = Color(255, 50, 50, 255)
+	wep.ChargeColor = Color( 255, 50, 50, 255 )
 	wep:Unload()
 end
 
 function ATTACHMENT:Detach(wep)
-	--wep.CachedColor = nil
-	--wep.ChargeColor = Color(255, 255, 255, 255)
+	wep.CachedColor = nil
+	wep.ChargeColor = Color(255, 255, 255, 255)
 	wep:Unload()
 end
 
